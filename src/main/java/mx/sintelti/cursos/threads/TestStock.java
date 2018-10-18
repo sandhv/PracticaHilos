@@ -8,6 +8,7 @@ import java.util.List;
 
 public class TestStock {
 
+    public static BigDecimal precio = new BigDecimal(0.0);
     public static void main(String[] args) throws IOException {
 
 
@@ -15,7 +16,7 @@ public class TestStock {
 
         List<String> lineas = Files.readAllLines(Paths.get(fileName));
 
-        BigDecimal precio = new BigDecimal(0.0);
+
         long Inicio = System.nanoTime();
         for (String empresa : lineas) {
 
@@ -25,7 +26,7 @@ public class TestStock {
 
         long fin =System.nanoTime();
         System.out.println(precio);
-        System.out.println((fin-Inicio)/1000000000);
+        System.out.println((fin-Inicio)/1000000000.0);
     }
 }
 
